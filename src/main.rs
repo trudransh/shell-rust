@@ -13,15 +13,13 @@ fn main() {
         let stdin = io::stdin(); // read input from user
         // create a new string to store the input
         stdin.read_line(&mut input).unwrap(); // read the input from the user and store it in input (unwrap() is used to handle the error if the input is not read)
+        if input.trim() == "exit 0" {
+            break;
+        }
         if input.ends_with('\n') {
             input.pop(); // remove the newline character from the input
         }
         println!("{}: command not found", input.trim());
-        if input.trim() == "exit 0" {
-            println!("exit {}", EXIT_CODE);
-            break;
-
-        }
         input.clear();// print the input from the user
     }
 }
