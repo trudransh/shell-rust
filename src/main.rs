@@ -18,6 +18,5 @@ fn main() {
         }
         println!("{}: command not found", input.trim()); 
         input.clear();// print the input from the user
-        break;
     }
 }
