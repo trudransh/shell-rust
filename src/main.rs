@@ -17,7 +17,7 @@ fn main() {
             input.pop(); // remove the newline character from the input
         }
         println!("{}: command not found", input.trim());
-        if input.trim() == "exit" {
+        if input.trim() == "exit 0" {
             println!("exit {}", EXIT_CODE);
             break;
 
