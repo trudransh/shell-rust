@@ -20,7 +20,5 @@ fn main() {
             }
             
         }
-        
-        input.clear();// print the input from the user
     }
 
