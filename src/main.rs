@@ -34,7 +34,7 @@ fn main() {
             }
             Some("type") =>  {
                 if BUILTIN_COMMANDS.contains_key(args.as_str()) {
-                    println!("{}: is a shell builtin",args);
+                    println!("{} is a shell builtin",args);
                 } else {
                     println!("{}: not found", args);
                 }
