@@ -1,6 +1,7 @@
 #[allow(unused_imports)]
 use std::io::{self, Write};
 use std::collections::HashMap;
+use std::env;
 use lazy_static::lazy_static;
 
 // lazy_static creates a global variable that is:
@@ -53,6 +54,25 @@ fn main() {
                 if BUILTIN_COMMANDS.contains_key(tail.as_str()) {
                     println!("{} is a shell builtin", tail);
                 } else {
+                        //  This is where you need to add PATH searching logic
+                        // TODO 1. Get PATH environment variable
+                        
+                        // TODO 2. Split PATH into directories
+                        // TODO 3. Check each directory for an executable with name "tail"
+                        // TODO 4. If found, print the full path
+                        // TODO 5. If not found anywhere, then print "not found"
+
+                        match env::var("PATH"){
+                            Ok(path) => {
+                                println!("{}", path);
+                                let directories = path.split(":");
+                                
+                            },
+                            Err(e)=> {
+                                println!("{}", e);
+                            }
+                        }               
+
                     println!("{}: not found", tail);
                 }
             },
